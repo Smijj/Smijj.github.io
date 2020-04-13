@@ -1,0 +1,273 @@
+/* 
+Colours:
+Highlight: #530b7a
+Background: gainsboro
+Main: lightgrey
+*/
+
+/* ----- Header ----- */
+.title {
+    display: flex;
+	align-items: center; 
+	background-color: gainsboro;
+	display: inline-flex;
+	font-family: 'Trebuchet MS', serif;
+}
+#logo {
+	height: 100px;
+	width: 100px;
+}
+h1 {
+	top: 0;
+	display: inline;
+}
+.menubuttons {
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+.menubuttons a {
+	display: block;
+    color: black;
+    padding: 5px 24px;
+    text-decoration: none;
+    transition: background-color, color, 0.4s;
+}
+.menubuttons a:hover {
+    color: white;
+	background-color: #3f075d;
+}
+
+/* ----- Navigation ----- */
+nav {
+	padding: 0 15% 0;
+	background: #530b7a;
+    overflow: hidden;
+    min-height: 30px;
+}
+nav > ul {
+    display: flex;
+    flex-flow: wrap row;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+nav > ul > li {
+    margin: 0 auto 0;
+}
+nav a {
+    display: block;
+    color: white;
+    margin: auto 0;
+    padding: 15px 25px 15px;
+    text-decoration: none;
+    transition: background-color 0.4s;
+	font-family: Verdana, serif;
+}
+nav a:hover {
+    background-color: #3f075d;
+}
+
+/* ----- Body ----- */
+body {
+    margin: 0px;
+    background-color: gainsboro;
+    Font-family: 'Segoe UI';
+}
+main {
+    margin: 10px 10px 0;
+    width: 80%;
+}
+
+/* ----- General Articles ----- */
+.articleImg {
+    width: 100px; /*TEMP*/
+    height: auto;
+}
+.articleHeading {   
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 15px;
+}
+.articleText {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* ----- Main Articles ----- */
+#mainArticleContainer {
+    background-color: lightgrey;
+    padding: 10px 0 10px;
+    height: min-content;
+}
+
+/* Feature Article */
+.featureArticle {
+    width: 60%;
+    height: 100%;
+    padding: 0 10px 0;
+    text-align: center;
+}
+.featureArticleImg {
+    width: 200px;
+    height: auto;
+}
+.featuredArticleHeading {
+    font-size: 35px;
+}
+.featuredArticleText {
+    font-weight: bold;
+}
+
+/* Recent Article */
+#recentArticleContainer {
+    width: 40%;
+    margin-right: auto;
+    padding-right: 10px;
+    padding-left: 13px; /* 10px padding + 3px border */
+    border-left: 3px solid #530b7a;
+}
+
+/* Scrolling Articles */
+#scrollingArticleContainer {
+    display: flex;
+    flex-flow: wrap row;
+}
+
+#scrollingArticleContainer article {
+    background-color: lightgrey;
+    margin: 5px auto 15px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+
+
+/* ----- Right Sidebar ----- */
+.sideArticles {
+    width: 20%;
+    height: min-content;
+    margin: 10px 10px 10px;
+    text-align: center;
+    background-color: lightgrey;
+}
+.sideHeader {
+    margin: 10px 0 10px;
+}
+.sideList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+.sideList a {
+    display: block;
+    padding: 2px 0 2px;
+    text-decoration: none;
+    color: black;
+    transition: background-color, color, 0.4s;
+}
+.sideList a:hover{
+    background-color: #530b7a;
+    color: white;
+}
+
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+    height: min-content;
+    background-color: lightgray;
+    border-bottom: 5px solid #530b7a;
+}
+.footerLinks {
+    margin: 20px 0 0;
+}
+.footerLinks a {
+    color: black;
+    background-color: lightgray;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 5px;
+    transition: background-color 0.4s;
+}
+.footerLinks a:hover {
+    background-color: #bbbbbb;
+}
+
+
+/* ----- General ----- */
+.textVerticalAlign {
+    text-align: center;
+}
+.flexDirRow {
+    display: flex;
+    flex-direction: row;
+}
+.flexDirColumn {
+    display: flex;
+    flex-direction: column;
+}
+.flexAlignCenter{
+    align-items: center;
+}
+[data-href] {
+    cursor: pointer;
+}
+
+
+/* ----- Media Queries ----- */
+
+@media screen and (max-width:1024px){
+    nav {
+        padding: 0;
+    }
+    
+    main {
+        width: 100%;
+    }
+    #mainArticleContainer {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px 0;
+        width: auto;
+    }
+    .featureArticle {
+        width: auto;
+        border-bottom: 5px solid #530b7a;
+        margin-bottom: 15px;
+    }
+    #recentArticleContainer{
+        width: 100%;
+        border-left: none;
+        padding: 0 10px 0;
+        width: auto;
+    }
+}
+@media screen and (max-width:768px){
+    .sideArticles {
+        display: none;
+    }
+    #scrollingArticleContainer article {
+        width: 350px;
+        height: 350px;
+    }
+}
+@media screen and (max-width:425px){
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        margin: auto;
+    }
+    .menubuttons {
+        margin: auto;
+        text-align: center;
+    }
+    
+    #scrollingArticleContainer article {
+        width: 300px;
+        height: 300px;
+    }
+}
