@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Onion</title>
+<link rel="stylesheet" href="../css/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <img id="logo" src="../img/onion.png">
+            <h1>The Onion</h1>
+        </div>
+        <div class="menubuttons">
+            <form>
+                <input class="search" type="text" name="search" placeholder="Search">
+            </form>
+            <a href="../404.html">Shop</a>
+            <a href="../404.html">Subscribe</a>
+        </div>
+
+        <nav>
+            <ul id="websiteView">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../latest_articles.html">Latest Articles</a></li>
+                <li><a href="../topic_politics.html">Politics</a></li>
+                <li><a href="../404.html">Sports</a></li>
+                <li><a href="../404.html">Local</a></li>
+                <li><a href="../404.html">Entertainment</a></li>
+            </ul>
+            <p id="mobileView" data-href="#" onclick="overlay()">Open/Close Menu</p>
+            <div id="overlay">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../latest_articles.html">Latest Articles</a></li>
+                    <li><a href="../topic_politics.html">Politics</a></li>
+                    <li><a href="../404.html">Sports</a></li>
+                    <li><a href="../404.html">Local</a></li>
+                    <li><a href="../404.html">Entertainment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="exampleArticleContainer flexDirColumn flexAlignCenter textVerticalAlign">
+        <h1 class="articleHeading">Nancy Pelosi Assures Democratic Reps They Don’t Need To Try Being Productive During Stressful Pandemic</h1>
+        <div class="flexDirCol">
+            <img class="articleImg" src="../img/politicsfeatured.jpg" alt="Image Missing" />
+            <p class="articleText">WASHINGTON—Encouraging lawmakers to avoid holding themselves to the impossible standard of protecting Americans, Speaker Nancy Pelosi (D-CA) assured Democratic 
+                House representatives Wednesday they don’t need to try being productive during the stressful pandemic.
+            <br><br>“These uncertain times are difficult for everyone, so don’t feel like you need to push yourself to constantly come up with detailed plans to avert a new depression,” 
+                said Pelosi, insisting that House Democrats should tune out the nagging voice of constituents pressuring them to ease mass suffering by enacting essential social safety 
+                measures before it’s too late.
+            <br><br>“Don’t create a bunch of tension in your life by attempting to secure aid to unemployed Americans struggling to pay for basic necessities. Supporting workers is not going to 
+                happen anyway, so don’t get all stressed. Look, this is not the time to beat yourself up over whether you’re doing enough to prevent a cataclysmic economic decline. 
+                Take a breather. Sometimes it’s better to just plop down on the couch and watch movies all day.” 
+            <br><br>At press time, Pelosi emphasized there would be plenty of time to work on enacting legislation after the pandemic was finished cratering every aspect of American life.</p>            
+        </div>
+    </main>
+
+	<footer class="flexDirColumn flexAlignCenter">
+        <div class="footerLinks"> <a href="#">Jobs</a><a href="#">Temp</a><a href="#">Temp</a><a href="#">Temp</a> </div>
+        <p class="textVerticalAlign footerCopyright">The Onion is not intended for readers under 18 years of age. © 2020 Darwoon Developers.</p>
+        <div class="footerAccent"></div>
+    </footer>
+</body>
+
+<script type="text/javascript" src="../js/javascript.js"></script>
