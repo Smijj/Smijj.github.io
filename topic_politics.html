@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Onion</title>
+<link rel="stylesheet" href="css/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div data-href="index.html" class="title">
+            <img id="logo" src="img/onion.png">
+            <h1>The Onion</h1>
+        </div>
+        <div class="menubuttons">
+            <form>
+                <input class="search" type="text" name="search" placeholder="Search">
+            </form>
+            <a href="404.html">Shop</a>
+            <a href="404.html">Subscribe</a>
+        </div>
+
+        <nav>
+            <ul id="websiteView">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="latest_articles.html">Latest Articles</a></li>
+                <li><a href="topic_politics.html">Politics</a></li>
+                <li><a href="404.html">Sports</a></li>
+                <li><a href="404.html">Local</a></li>
+                <li><a href="404.html">Entertainment</a></li>
+            </ul>
+            <p id="mobileView" data-href="#" onclick="overlay()">Open/Close Menu</p>
+            <div id="overlay">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="latest_articles.html">Latest Articles</a></li>
+                    <li><a href="topic_politics.html">Politics</a></li>
+                    <li><a href="404.html">Sports</a></li>
+                    <li><a href="404.html">Local</a></li>
+                    <li><a href="404.html">Entertainment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+		
+    <main id="mainPoliticsArticleContainer" class="flexDirColumn">
+        <h1>Politics</h1>
+        <article data-href="articles/example_article2.html" id="featurePoliticsArticle" class="flexDirColumn flexAlignCenter textVerticalAlign">
+            <img class="articleImg" src="img/politicsfeatured.jpg" alt="Image Missing"/>
+            <h2 class="articleHeading textVerticalAlign">Nancy Pelosi Assures Democratic Reps They Don’t Need To Try Being Productive During Stressful Pandemic</h2>
+            <p class="articleText">WASHINGTON—Encouraging lawmakers to avoid holding themselves to the impossible standard of protecting Americans, Speaker Nancy Pelosi (D-CA) assured Democratic House representatives Wednesday they don’t need to try being productive during the stressful pandemic...</p>
+        </article>
+
+        <article data-href="#" class="adHorizontal textVerticalAlign">
+            <img src="img/ad1.jpg" alt="Image Missing" />
+        </article>
+
+        <section id="recentPoliticsArticleContainer" class="flexDirColumn textVerticalAlign flexAlignCenter">
+            <section class="flexDirRow">
+                <article data-href="articles/example_article3.html">
+                    <img class="articleImg" src="img/featuredarticleimg.jpg" alt="Image Missing" />
+                    <h2 class="articleHeading ">Southern Governors Argue Covid-19 Good Christian Virus That Wouldn’t Dare Spread During Church</h2>
+                    <p class="articleText">TALLAHASSEE, FL—In a bold affirmation of faith during a time of widespread global pandemic...</p>
+                </article>
+                <article data-href="404.html">
+                    <img class="articleImg " src="img/scrollingarticle6.jpg" alt="Image Missing" />
+                    <h2 class="articleHeading ">‘It Was, For, Uh, Medical Reasons,’ Says Doctor To Boris Johnson, Explaining Why They Had To Give Him Haircut</h2>
+                    <p class="articleText ">LONDON—Calling the procedure “a fast, er, effective way” to treat symptoms...</p>
+                </article>
+            </section>
+            <section class="flexDirRow">
+                <article data-href="404.html">
+                    <img class="articleImg" src="img/scrollingarticle2.jpg" alt="Image Missing" />
+                    <h2 class="articleHeading">Biden Addresses Sexual Assault Allegations: ‘My Advisors Told Me To Say They Aren’t True’</h2>
+                    <p class="articleText">WASHINGTON—Addressing allegations by Tara Reade that the Democratic presidential candidate...</p>
+                </article>
+                <article data-href="404.html">
+                    <img class="articleImg" src="img/scrollingarticle4.jpg" alt="Image Missing" />
+                    <h2 class="articleHeading">Trump Tackles Medical Supply Shortage By Awarding ExxonMobil Contract To Drill For Ventilators In Arctic</h2>
+                    <p class="articleText">WASHINGTON—Saying there was no way the coronavirus could win with...</p>
+                </article>  
+            </section>
+        </section>      
+    </main>
+
+	<footer class="flexDirColumn flexAlignCenter">
+        <div class="footerLinks"> <a href="#">Jobs</a><a href="#">Temp</a><a href="#">Temp</a><a href="#">Temp</a> </div>
+        <p class="textVerticalAlign footerCopyright">The Onion is not intended for readers under 18 years of age. © 2020 Darwoon Developers.</p>
+        <div class="footerAccent"></div>
+    </footer>
+</body>
+
+<script type="text/javascript" src="js/javascript.js"></script>
