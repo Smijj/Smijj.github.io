@@ -1,14 +1,14 @@
 {
-"name": "CDU Assignment Scheduler",
-"short_name": "CDU Scheduler",
+"name": "The Onion - Your Goto Satirical News Site",
+"short_name": "The Onion",
 "icons": [
     {
-        "src": "images/icons/icon-128.png",
+        "src": "img/onion.png",
         "sizes": "128x128",
         "type": "image/png"
     },
     {
-        "src": "images/icons/icon-512.png",
+        "src": "img/onion.png",
         "sizes": "512x512",
         "type": "image/png"
     }
