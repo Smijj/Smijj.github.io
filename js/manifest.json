@@ -3,12 +3,12 @@
 "short_name": "The Onion",
 "icons": [
     {
-        "src": "img/onion.png",
+        "src": "./img/onion.png",
         "sizes": "128x128",
         "type": "image/png"
     },
     {
-        "src": "img/onion.png",
+        "src": "./img/onion.png",
         "sizes": "512x512",
         "type": "image/png"
     }
