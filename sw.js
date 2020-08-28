@@ -3,6 +3,10 @@ var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION;
 var urlsToCache = [
 '/',
+'/index.html',
+'/latest_articles.html',
+'/topic_politics.html',
+'/404.html',
 '/css/style.css',
 '/js/javascript.js'
 ];
