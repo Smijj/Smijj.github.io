@@ -1,0 +1,322 @@
+/* Variables */
+
+:root {
+    --backgroundColour: rgb(49, 49, 49);
+    --buttonBackgroundColour: rgb(180, 180, 180);
+    --buttonHighlightColour: rgb(78, 78, 78);
+    --eventBackgroundColour: rgb(206, 196, 216);
+    --highlightColour: rgb(179, 76, 58);
+    --borderColour: black;
+    --textColour: black;
+}
+
+/* General */
+
+body {
+    background-color: var(--backgroundColour);
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Segoe UI';
+} 
+
+.Hdivider {
+    background-color: var(--borderColour);
+    border-radius: 3px;
+    height: 4px;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border-radius: 15px;
+    border: 2px solid var(--borderColour);
+    background-color: var(--buttonBackgroundColour);
+    color: var(--textColour);
+    font-weight: bold;
+}
+
+
+/* Icons and Images */
+
+.logo {
+    height: 40px;
+    margin: 5px 5px 5px 0px;
+    display: flex;
+    align-self: center;
+
+}
+#open-menu-icon {
+    width: 32px;
+    height: 32px;
+    margin: 9px 9px 9px auto;
+    padding: 0;
+}
+#close-menu-icon  {
+    width: 32px;
+    height: 32px;
+    margin: 9px auto 9px 9px;
+    padding: 0;
+}
+#search-icon {
+    width: 32px;
+    height: 32px;
+    margin: 9px 9px 9px 0px;
+    padding: 0;
+}
+
+
+
+/* Main Section */
+
+.main {
+    width: 100%;
+}
+
+.main-headerbar {
+    display: flex;
+    flex-direction: row;
+    justify-items: right;
+}
+#add-event {
+    height: 40px;
+    margin: auto 5px auto 10px;
+}
+#event-search-bar {
+    height: 40px;
+    min-width: 80px;
+    margin: auto 10px auto 5px;
+}
+
+
+
+/* Event Display Section */
+
+#event-display-section {
+    display: flex;
+    flex-direction: column;
+}
+#event-headers {
+    display: flex;
+    flex-direction: row;
+}
+#event-headers:hover {
+    cursor: pointer;
+}
+#event-headers article {
+    display: flex; /* This will get overwritten by the javascript */
+    flex-direction: column;
+    width: 33%;
+    height: 50px;
+
+    text-align: center;
+    background-color: var(--buttonBackgroundColour); /* This will get overwritten by the javascript */
+}
+#event-headers article h2 {
+    font-size: 20px;
+    margin: auto 0 auto 0;
+}
+
+#repeating {
+    border-left: 3px solid var(--borderColour);
+    border-right: 3px solid var(--borderColour);
+}
+
+
+/* Event List */
+
+#event-list {
+    padding: 0px;
+    margin: 10px 10px 0px 10px;
+}
+#event-list li {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+
+    background-color: var(--eventBackgroundColour);
+    border: 3px solid var(--borderColour);
+    padding: 0 10px 0 10px;
+    margin: 0 0 10px 0;
+}
+#event-list li div {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+#event-list .event-name{
+    font-weight: bold;
+    font-size: 18px;
+    overflow: hidden;
+    margin: auto 0 auto 0;
+}
+#event-list .event-edit-button
+
+{
+    margin: 8px 0 8px auto;
+}
+#event-list .event-delete-button{
+    margin: 8px 0 8px 5px;
+}
+/* #event-list .event-date{
+    
+} */
+#event-list .event-time{
+    margin: auto 0 auto auto;
+}
+
+
+
+/* Event Edit Section */
+
+#event-edit-section {
+    display: none; /* This will get overwritten by the javascript */
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#event-edit-section input {
+    width: 70%;
+    height: 30px;
+    font-size: 18px;
+    margin-bottom:8px;
+}
+#event-edit-button {
+    margin: 25px 0 0 0;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+}
+
+
+
+/* Side Bar */
+
+#sidebar {
+    width: 192px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    background-color: var(--buttonHighlightColour);
+    border-left: var(--highlightColour) solid 5px;
+    border-bottom: var(--highlightColour) solid 5px;
+    display: none; /* This will get overwritten by the javascript */
+}
+#sidebar #menu-button-bar {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background-color: var(--backgroundColour);
+}
+
+/* Friends Header */
+
+#aside-headerbar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--buttonBackgroundColour);
+}
+#aside-headerbar div {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+}
+#aside-headerbar h2 {
+    margin: 8px 0 8px auto;
+}
+#aside-headerbar #add-friend {
+    background-color: var(--buttonHighlightColour);
+    color: white;
+    font-size: 22px;
+    margin: 3px auto 3px 5px;
+    padding: 1px auto 1px auto;
+    height: 30px;
+    width: 30px;
+}
+#friend-search-bar {
+    width: 70%;
+    height: 32px;
+    margin: 0 5px 0 10px;
+}
+
+
+
+
+
+/* Friends List */
+
+#friend-list {
+    padding: 0px;
+    margin: 10px 10px 0px 10px;
+}
+#friend-list li {
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    background-color: var(--eventBackgroundColour);
+    border: 3px solid var(--borderColour);
+    padding: 0 10px 0 10px;
+    margin: 0 0 10px 0;
+}
+#friend-list li div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#friend-list li span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.friend-name {
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.friend-edit-button {
+    margin: 0px 5px 5px auto;
+}
+.friend-delete-button {
+    margin: 0px auto 5px 5px;
+}
+
+/* Friend Edit Section */
+
+#friend-edit-section {
+    display: none; /* This will get overwritten by the javascript */
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+#friend-edit-section input {
+    width: 90%;
+    height: 20px;
+    font-size: 14px;
+    margin-bottom:8px;
+}
+#friend-edit-button, #friend-cancel-button {
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
