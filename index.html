@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Red Diamond Planner</title>
+    <link rel="shortcut icon" href="imgs/Logo192-White.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="imgs/Logo192-White.png">
+</head>
+<!-- onload function here just preloads the event list when the page is loaded -->
+<body onload="onLoad('upcoming')"> 
+    
+    <!-- MAIN -->
+    
+    <section class="main">
+        <article class="main-headerbar">
+            <h1 id="edit-event-header">Add Event</h1>
+            <button id="add-event" onclick="addEventPage()">Add Event</button>
+            <input type="search" name="searchEvents" id="event-search-bar" placeholder="Search for Event...">
+            <img id="search-icon" onclick="searchEvents()" src="imgs/SearchIcon.png" alt="Cannot Find image" sizes="50x50">
+            <img id="open-menu-icon" onclick="toggleSidebar()" src="imgs/MenuIcon50.png" alt="Cannot Find image" sizes="50x50">
+        </article>
+
+        <div class="Hdivider"></div>
+
+        <section id="event-list-section">
+            <div id="event-headers">
+                <article id="upcoming" onclick="loadEventList('upcoming')"> 
+                    <h2>Upcoming</h2>               
+                </article>
+                <article id="repeating" onclick="loadEventList('repeating')">
+                    <h2>Repeating</h2>
+                </article>
+                <article id="finished" onclick="loadEventList('finished')">
+                    <h2>Finished</h2>
+                </article>
+            </div>
+            <div class="Hdivider"></div>
+            <ul id="event-list"></ul>
+        </section>
+
+        <section id="event-view-section">
+            <div>
+                <label for="event-view-name">Event Name: </label>
+                <p id="event-view-name"></p>
+                
+                <label for="event-view-date">Date: </label>
+                <p id="event-view-date"></p>
+                
+                <label for="event-view-time">Time: </label>
+                <p id="event-view-time"></p>
+                
+                <label for="event-view-repeating">Repeating: </label>
+                <p id="event-view-repeating"></p>
+                
+                <label for="event-view-repeatingdays">Repeating Days (If Repeating)*: </label>
+                <p id="event-view-repeatingdays">e.g. Mon, Tue, Fri</p>
+
+                <label>Friends Going: </label>
+                <ul id="view-friends-going">
+                    
+                </ul>
+            </div>
+
+            <button id="event-view-edit-button">Edit</button>
+            <button id="event-view-delete-button">Delete</button>
+            <button id="event-view-back-button" onclick="loadEventListPage()">Back</button>
+            
+            <br>
+            <p>*Not Functional Yet</p>
+        </section>
+
+        <section id="event-edit-section">
+            <label for="nameValue">Name: </label>
+            <input type="text" name="name" id="nameValue">
+
+            <label for="dateValue">Date: </label>
+            <input type="date" name="date" id="dateValue">
+            
+            <label for="timeValue">Time: </label>
+            <input type="time" name="time" id="timeValue">
+
+            <label for="repeatingValue">Repeating? </label>
+            <input type="checkbox" name="repeating" id="repeatingValue">
+
+            <label for="friendsGoing">Invite Friends: </label>
+            <article id="friendsGoing">
+                <div>
+                    <h2>Friends:</h2>
+                    <ul id="add-event-friends-list"></ul>
+                </div>
+                <span class="Vdivider"></span>
+                <div>
+                    <h2>Going:</h2>
+                    <ul id="add-event-friends-going"></ul>
+                </div>
+            </article>
+            
+            <button id="event-edit-button">Save Event</button>
+            <button id="event-edit-back-button" onclick="loadEventListPage()">Back</button>
+
+            <p>*Not Functional Yet</p>
+        </section>
+    </section>
+
+
+    <!-- SIDEBAR -->
+
+    <aside id="sidebar">
+        <section id="menu-button-bar">
+            <img id="close-menu-icon" onclick="toggleSidebar()" src="imgs/MenuIcon50.png" alt="Image Missing">
+            <img class="logo" src="imgs/Logo192-White.png" alt="Cannot Find Image" sizes="192x192">
+        </section>
+
+        <div class="Hdivider"></div>
+
+        <section id="friend-list-section">
+            <article id="aside-headerbar">
+                <div>
+                    <h2>Friends</h2>
+                    <button id="add-friend" onclick="addFriendPage()">Add Friend</button>
+                </div>
+                <div>
+                    <input type="search" name="searchFriends" id="friend-search-bar" placeholder="Search for Friend...">
+                    <img id="search-icon" onclick="searchFriends()" src="imgs/SearchIcon.png" alt="Cannot Find image" sizes="50x50">    
+                </div>
+            </article>
+            <div class="Hdivider"></div>
+            <ul id="friend-list"></ul>
+        </section>
+
+        <section id="friend-view-section">
+            <label for="friend-view-name">Name: </label>
+            <p id="friend-view-name"></p>
+            
+            <label for="friend-view-address">Address: </label>
+            <p id="friend-view-address"></p>
+            
+            <label for="friend-view-email">Email: </label>
+            <p id="friend-view-email"></p>
+
+            <button id="friend-view-edit-button">Edit</button>
+            <button id="friend-view-delete-button">Delete</button>
+            <button id="friend-view-back-button" onclick="loadFriendListPage()">Back</button>
+        </section>
+
+        <section id="friend-edit-section">
+            <label for="friendNameValue">Name: </label>
+            <input type="text" name="friendName" id="friendNameValue">
+
+            <label for="friendAddressValue">Address: </label>
+            <input type="text" name="date" id="friendAddressValue">
+            
+            <label for="friendEmailValue">Email: </label>
+            <input type="email" name="email" id="friendEmailValue">
+
+            <button id="friend-edit-button">Save Friend</button>
+            <button id="friend-cancel-button" onclick="loadFriendListPage()">Cancel</button>
+        </section>
+    </aside>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
+
+
