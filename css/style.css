@@ -1,15 +1,16 @@
 /* Variables */
 
 :root {
-    --backgroundColour: rgb(49, 49, 49);
-    --buttonBackgroundColour: rgb(180, 180, 180);
-    --buttonHighlightColour: rgb(78, 78, 78);
-    --eventBackgroundColour: rgb(206, 196, 216);
-    --highlightColour: white;
+    --backgroundColour: #2F4858;
+    --headerBackgroundColour: #86BBD8;
+    --buttonBackgroundColour: #d46b32;
+    --eventBackgroundColour: #33658A;
+    --highlightColour: #86BBD8;
     --borderColour: black;
     --darkTextColour: black;
     --lightTextColour: white;
 }
+
 
 /* General */
 
@@ -54,6 +55,12 @@ button {
     font-weight: bold;
 }
 
+input[type=search] {
+    border-radius: 10px;
+    border: 2px solid var(--borderColour);
+    background-color: var(--lightTextColour);
+    color: var(--darkTextColour);
+}
 
 /* Icons and Images */
 
@@ -76,13 +83,6 @@ button {
     margin: 9px auto 9px 9px;
     padding: 0;
 }
-#search-icon {
-    width: 32px;
-    height: 32px;
-    margin: 9px 9px 9px 0px;
-    padding: 0;
-}
-
 
 
 /* Main Section */
@@ -99,8 +99,9 @@ button {
 #add-event {
     height: 40px;
     margin: auto 5px auto 10px;
+    font-weight: bold;
 }
-#event-search-bar {
+#event-search {
     height: 40px;
     min-width: 80px;
     margin: auto 10px auto 5px;
@@ -136,7 +137,7 @@ button {
     height: 50px;
 
     text-align: center;
-    background-color: var(--buttonBackgroundColour); /* This will get overwritten by the javascript */
+    background-color: var(--headerBackgroundColour); /* This will get overwritten by the javascript */
 }
 #event-headers article h2 {
     font-size: 20px;
@@ -161,6 +162,7 @@ button {
     border-radius: 10px;
 
     background-color: var(--eventBackgroundColour);
+    color: var(--lightTextColour);
     border: 3px solid var(--borderColour);
     padding: 0 10px 0 10px;
     margin: 0 0 10px 0;
@@ -214,6 +216,9 @@ button {
     font-size: 18px;
     margin-bottom:8px;
 }
+#event-edit-section label {
+    color: var(--highlightColour);
+}
 #event-edit-section button {
     width: 70%;
     height: 35px;
@@ -254,6 +259,7 @@ button {
 
 
 /* Event View Section */
+
 #event-view-section {
     display: none; /* This will get overwritten by the javascript */
     flex-direction: column;
@@ -261,7 +267,7 @@ button {
     padding: 15px;
 }
 #event-view-section label {
-    color: var(--lightTextColour);
+    color: var(--highlightColour);
     font-size: 20px;
     font-weight: bold;
 }
@@ -294,12 +300,12 @@ button {
 #sidebar {
     display: none; /* This will get overwritten by the javascript */
     width: 192px;
-    height: auto;
-    position: absolute;
+    height: 100%;
+    position: fixed;
+    overflow: scroll;
     right: 0px;
-    background-color: var(--buttonHighlightColour);
-    border-left: var(--highlightColour) solid 5px;
-    border-bottom: var(--highlightColour) solid 5px;
+    background-color: var(--backgroundColour);
+    border-left: var(--borderColour) solid 5px;
 }
 #sidebar #menu-button-bar {
     display: flex;
@@ -313,7 +319,7 @@ button {
 #aside-headerbar {
     display: flex;
     flex-direction: column;
-    background-color: var(--buttonBackgroundColour);
+    background-color: var(--headerBackgroundColour);
 }
 #aside-headerbar div {
     display: flex;
@@ -326,15 +332,15 @@ button {
     width: auto;
 }
 #aside-headerbar #add-friend {
-    background-color: var(--buttonHighlightColour);
-    color: var(--lightTextColour);
+    background-color: var(--buttonBackgroundColour);
+    color: var(--darkTextColour);
     font-size: 14px;
     margin: 3px auto 3px 5px;
     padding: 2px auto 2px auto;
     height: auto;
     width: 30%;
 }
-#friend-search-bar {
+#friend-search {
     width: 70%;
     height: 32px;
     margin: 0 5px 0 10px;
