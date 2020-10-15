@@ -257,6 +257,32 @@ input[type=search] {
     margin: 3px 0 3px 0;
 }
 
+#repeating-event-toggle-date {
+    display: flex; /* This will get overwritten by the javascript */
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}
+#repeating-event-toggle-date input {
+    width: 100%; /* This overwrites the input getting set to 70% on line 214 */
+    align-items: center;
+}
+#repeating-event-toggle-weekdays {
+    display: none; /* This will get overwritten by the javascript */
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    align-items: center;
+    font-size: 16px;
+}
+#repeating-event-toggle-weekdays div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    padding: 0 5px 0 5px;
+}
+
 
 /* Event View Section */
 
@@ -292,6 +318,14 @@ input[type=search] {
     margin: 8px 0 0 0;
 }
 
+#view-repeating-days {
+    display: flex; /* This will get overwritten by the javascript */
+    flex-direction: column;
+}
+#view-date {
+    display: flex; /* This will get overwritten by the javascript */
+    flex-direction: column;
+}
 
 
 

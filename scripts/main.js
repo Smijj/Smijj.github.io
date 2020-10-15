@@ -67,6 +67,24 @@ function saveEvent() {
     var localDateFormat = new Date(dateValue).toLocaleDateString("en-AU"); // Converts to local date format
     var friendsGoing = JSON.parse(localStorage.getItem('temp_list')); // gets a list of stringified dictionaries
 
+    // If repeating what days are the event to repeat on?
+    var mondayValue = document.getElementById("mondayValue").checked;
+    var tuesdayValue = document.getElementById("tuesdayValue").checked;
+    var wednesdayValue = document.getElementById("wednesdayValue").checked;
+    var thursdayValue = document.getElementById("thursdayValue").checked;
+    var fridayValue = document.getElementById("fridayValue").checked;
+    var saturdayValue = document.getElementById("saturdayValue").checked;
+    var sundayValue = document.getElementById("sundayValue").checked;
+    var repeatingDays = {
+        "monday": mondayValue, 
+        "tuesday": tuesdayValue, 
+        "wednesday": wednesdayValue, 
+        "thursday": thursdayValue, 
+        "friday": fridayValue, 
+        "saturday": saturdayValue, 
+        "sunday": sundayValue
+    };
+
     // Checks if the event has happened yet
     if (new Date() < new Date(dateValue)) {
         eventType = "upcoming";
@@ -78,7 +96,16 @@ function saveEvent() {
     }
 
     // Creating an object that holds the event data
-    var data = {"name" : nameValue, "date" : localDateFormat, "rawDate": dateValue, "time": timeValue, "type": eventType, "repeating": repeatingValue, "friendsGoing": friendsGoing};
+    var data = {
+        "name" : nameValue, 
+        "date" : localDateFormat, 
+        "rawDate": dateValue, 
+        "time": timeValue, 
+        "type": eventType, 
+        "repeating": repeatingValue, 
+        "repeatingDays": repeatingDays, 
+        "friendsGoing": friendsGoing
+    };
     // Getting the list (array techincally whatever) of events from local storage
     var eventList = JSON.parse(localStorage.getItem("events"));
     eventList.push(JSON.stringify(data)); 
@@ -99,6 +126,23 @@ function editEvent(key) {
     var localDateFormat = new Date(dateValue).toLocaleDateString("en-AU"); // Converts to local date format
     var friendsGoing = JSON.parse(localStorage.getItem('temp_list')); // gets a list of stringified dictionaries
 
+    // If repeating what days are the event to repeat on?
+    var mondayValue = document.getElementById("mondayValue").checked;
+    var tuesdayValue = document.getElementById("tuesdayValue").checked;
+    var wednesdayValue = document.getElementById("wednesdayValue").checked;
+    var thursdayValue = document.getElementById("thursdayValue").checked;
+    var fridayValue = document.getElementById("fridayValue").checked;
+    var saturdayValue = document.getElementById("saturdayValue").checked;
+    var sundayValue = document.getElementById("sundayValue").checked;
+    var repeatingDays = {
+        "monday": mondayValue, 
+        "tuesday": tuesdayValue, 
+        "wednesday": wednesdayValue, 
+        "thursday": thursdayValue, 
+        "friday": fridayValue, 
+        "saturday": saturdayValue, 
+        "sunday": sundayValue
+    };
 
     // Checks if the event has happened yet
     if (new Date() < new Date(dateValue)) {
@@ -111,7 +155,16 @@ function editEvent(key) {
     }
 
     // Creating an object that holds the event data
-    var data = {"name" : nameValue, "date" : localDateFormat, "rawDate": dateValue, "time": timeValue, "type": eventType, "repeating": repeatingValue, "friendsGoing": friendsGoing};
+    var data = {
+        "name" : nameValue, 
+        "date" : localDateFormat, 
+        "rawDate": dateValue, 
+        "time": timeValue, 
+        "type": eventType, 
+        "repeating": repeatingValue, 
+        "repeatingDays": repeatingDays, 
+        "friendsGoing": friendsGoing};
+    
     // Getting the list (array techincally whatever) of events from local storage
     tempList = JSON.parse(localStorage.getItem("events"));
     tempList.splice(key, 1, JSON.stringify(data)); // Replacing the existing data in the event list with the new values
@@ -149,20 +202,35 @@ function addEventPage() {
 function editEventPage(key) {
     loadEventEditPage();
 
+    var eventList = JSON.parse(localStorage.getItem("events"));
+    var eventData = JSON.parse(eventList[key]);
+
+    // Changes the title of the page to reflect the fact that it is the edit page.
     document.getElementById("edit-event-header").innerHTML = "Edit Event";
     document.getElementById("edit-event-header").style.display = "block";
     
     // Switching Buttons in the event edit page
     document.getElementById("event-edit-button").innerHTML = "Save Event";
     document.getElementById("event-edit-button").onclick = function() {editEvent(key)};
-    
-    var eventList = JSON.parse(localStorage.getItem("events"));
-    var eventData = JSON.parse(eventList[key]);
+
+    // correctly loads the repeating days if the event is repeating
+    if (eventData.repeating) {
+        document.getElementById("repeating-event-toggle-date").style.display = "none";
+        document.getElementById("repeating-event-toggle-weekdays").style.display = "flex";
+    }
 
     document.getElementById("nameValue").value = eventData.name;
     document.getElementById("dateValue").value = eventData.rawDate;
     document.getElementById("timeValue").value = eventData.time;
     document.getElementById("repeatingValue").checked = eventData.repeating;
+    // repeating days
+    document.getElementById("mondayValue").checked = eventData.repeatingDays.monday;
+    document.getElementById("tuesdayValue").checked = eventData.repeatingDays.tuesday;
+    document.getElementById("wednesdayValue").checked = eventData.repeatingDays.wednesday;
+    document.getElementById("thursdayValue").checked = eventData.repeatingDays.thursday;
+    document.getElementById("fridayValue").checked = eventData.repeatingDays.friday;
+    document.getElementById("saturdayValue").checked = eventData.repeatingDays.saturday;
+    document.getElementById("sundayValue").checked = eventData.repeatingDays.sunday;
 
     localStorage.setItem("temp_list", JSON.stringify(eventData.friendsGoing));
 
@@ -177,18 +245,48 @@ function editEventPage(key) {
     loadFriendsGoingSection();
 }
 
+
 function viewEventPage(key) {
     loadEventViewPage();
 
     var eventList = JSON.parse(localStorage.getItem("events"));
     var eventData = JSON.parse(eventList[key]);
+    var repeatingDaysString = "";
+    if (eventData.repeatingDays.monday) {
+        repeatingDaysString += "Mon  "
+    }
+    if (eventData.repeatingDays.tuesday) {
+        repeatingDaysString += "Tue  "
+    }
+    if (eventData.repeatingDays.wednesday) {
+        repeatingDaysString += "Wed  "
+    }
+    if (eventData.repeatingDays.thursday) {
+        repeatingDaysString += "Thu  "
+    }
+    if (eventData.repeatingDays.friday) {
+        repeatingDaysString += "Fri  "
+    }
+    if (eventData.repeatingDays.saturday) {
+        repeatingDaysString += "Sat  "
+    }
+    if (eventData.repeatingDays.sunday) {
+        repeatingDaysString += "Sun  "
+    }
     
     // Setting the onclick functions for event view buttons
     document.getElementById("event-view-edit-button").onclick = function() {editEventPage(key)};
     document.getElementById("event-view-delete-button").onclick = function() {deleteEvent(key, eventData.type)};
-
     document.getElementById("event-view-name").innerHTML = eventData.name;
-    document.getElementById("event-view-date").innerHTML = eventData.date;
+    if (eventData.repeating) {
+        document.getElementById("event-view-repeatingdays").innerHTML = repeatingDaysString;
+        document.getElementById("view-date").style.display = "none";
+        document.getElementById("view-repeating-days").style.display = "flex";
+    } else {
+        document.getElementById("event-view-date").innerHTML = eventData.date;
+        document.getElementById("view-date").style.display = "flex";
+        document.getElementById("view-repeating-days").style.display = "none";
+    }
     document.getElementById("event-view-time").innerHTML = eventData.time;
     document.getElementById("event-view-repeating").innerHTML = eventData.repeating;
 
@@ -201,6 +299,29 @@ function viewEventPage(key) {
         
         document.getElementById("view-friends-going").innerHTML += outStr;
     }
+}
+
+// Repeating Events Stuff
+function repeatingEventToggle(){
+    var repeatingValue = document.getElementById("repeatingValue").checked;
+    if (repeatingValue) {
+        document.getElementById("repeating-event-toggle-date").style.display = "none";
+        document.getElementById("repeating-event-toggle-weekdays").style.display = "flex";
+    } else {
+        document.getElementById("repeating-event-toggle-date").style.display = "flex";
+        document.getElementById("repeating-event-toggle-weekdays").style.display = "none";
+    }
+}
+function resetRepeatingToggle(){
+    document.getElementById("repeating-event-toggle-date").style.display = "block";
+    document.getElementById("repeating-event-toggle-weekdays").style.display = "none";
+    document.getElementById("mondayValue").checked = false;
+    document.getElementById("tuesdayValue").checked = false;
+    document.getElementById("wednesdayValue").checked = false;
+    document.getElementById("thursdayValue").checked = false;
+    document.getElementById("fridayValue").checked = false;
+    document.getElementById("saturdayValue").checked = false;
+    document.getElementById("sundayValue").checked = false;
 }
 
 
@@ -227,6 +348,7 @@ function loadEventEditPage() {
 function loadEventListPage() {
     ChooseEventPage("none", "none", "flex");
 
+    resetRepeatingToggle(); // Reseting the repeading days in the add event section
     resetFriendGoingStatus(); // Reseting the 'going' variable in the friends dictionary to false
     localStorage.removeItem('temp_list'); // Removing the temp_list from local storage
 
@@ -284,9 +406,11 @@ function loadEventList(eventType) {
 
             // Checks if the event has happened yet
             if (new Date() > new Date(eventData.rawDate)) {
-                eventData.type = "finished";
-                eventList.splice(i, 1, JSON.stringify(eventData)); // Replacing the entry in the list
-                localStorage.setItem("events", JSON.stringify(eventList));
+                if (eventData.type != "repeating"){
+                    eventData.type = "finished";
+                    eventList.splice(i, 1, JSON.stringify(eventData)); // Replacing the entry in the list
+                    localStorage.setItem("events", JSON.stringify(eventList));
+                } 
             }
  
             if (eventData.type == eventType) {
@@ -297,7 +421,11 @@ function loadEventList(eventType) {
                     outStr += "<button class=\"event-edit-button\" onclick=\"editEventPage('" + i + "')\">Edit</button>";
                     outStr += "<button class=\"event-delete-button\" onclick=\"deleteEvent('" + i + "','" + eventData.type + "')\">Delete</button>";
                     outStr += "</div><span class=\"Hdivider\"></span><div onclick=\"viewEventPage('" + i + "')\">";
-                    outStr += "<p class=\"event-date\">" + eventData.date + "</p>";
+                    if (eventData.repeating){
+                        outStr += "<p class=\"event-date\">Repeating Event</p>";
+                    } else {
+                        outStr += "<p class=\"event-date\">" + eventData.date + "</p>";
+                    }
                     outStr += "<p class=\"event-time\">" + eventData.time + "</p>";
                     outStr += "</div></li>";
                 } else { // If the searchbar does have something in it, see if that something matches any event names and show them if it does.
@@ -307,7 +435,11 @@ function loadEventList(eventType) {
                         outStr += "<button class=\"event-edit-button\" onclick=\"editEventPage('" + i + "')\">Edit</button>";
                         outStr += "<button class=\"event-delete-button\" onclick=\"deleteEvent('" + i + "','" + eventData.type + "')\">Delete</button>";
                         outStr += "</div><span class=\"Hdivider\"></span><div onclick=\"viewEventPage('" + i + "')\">";
-                        outStr += "<p class=\"event-date\">" + eventData.date + "</p>";
+                        if (eventData.repeating){
+                            outStr += "<p class=\"event-date\">Repeating Event</p>";
+                        } else {
+                            outStr += "<p class=\"event-date\">" + eventData.date + "</p>";
+                        }
                         outStr += "<p class=\"event-time\">" + eventData.time + "</p>";
                         outStr += "</div></li>";
                     } 
@@ -329,6 +461,11 @@ function setEventHeaderTextColours(upcoming, repeating, finished) {
     document.getElementById("repeating").style.color = repeating;
     document.getElementById("finished").style.color = finished;
 }
+
+
+
+
+
 
 
 

@@ -46,17 +46,21 @@
                 <label for="event-view-name">Event Name: </label>
                 <p id="event-view-name"></p>
                 
-                <label for="event-view-date">Date: </label>
-                <p id="event-view-date"></p>
-                
                 <label for="event-view-time">Time: </label>
                 <p id="event-view-time"></p>
                 
                 <label for="event-view-repeating">Repeating: </label>
                 <p id="event-view-repeating"></p>
                 
-                <label for="event-view-repeatingdays">Repeating Days (If Repeating)*: </label>
-                <p id="event-view-repeatingdays">e.g. Mon, Tue, Fri</p>
+                <div id="view-repeating-days">
+                    <label for="event-view-repeatingdays">Repeating Days</label>
+                    <p id="event-view-repeatingdays"></p>
+                </div>
+
+                <div id="view-date">
+                    <label for="event-view-date">Date: </label>
+                    <p id="event-view-date"></p>
+                </div>
 
                 <label>Friends Going: </label>
                 <ul id="view-friends-going">
@@ -67,23 +71,53 @@
             <button id="event-view-edit-button">Edit</button>
             <button id="event-view-delete-button">Delete</button>
             <button id="event-view-back-button" onclick="loadEventListPage()">Back</button>
-            
-            <br>
-            <p>*Not Functional Yet</p>
         </section>
 
         <section id="event-edit-section">
             <label for="nameValue">Name: </label>
             <input type="text" name="name" id="nameValue">
 
-            <label for="dateValue">Date: </label>
-            <input type="date" name="date" id="dateValue">
-            
             <label for="timeValue">Time: </label>
             <input type="time" name="time" id="timeValue">
 
             <label for="repeatingValue">Repeating? </label>
-            <input type="checkbox" name="repeating" id="repeatingValue">
+            <input type="checkbox" name="repeating" id="repeatingValue" onclick="repeatingEventToggle()">
+            
+            <div id="repeating-event-toggle-date">
+                <label for="dateValue">Date: </label>
+                <input type="date" name="date" id="dateValue">
+            </div>
+
+            <div id="repeating-event-toggle-weekdays">
+                <div>
+                    <label for="mondayValue">Monday</label>
+                    <input type="checkbox" name="monday" id="mondayValue">    
+                </div>
+                <div>
+                    <label for="tuesdayValue">Tuesday</label>
+                    <input type="checkbox" name="tuesday" id="tuesdayValue">    
+                </div>
+                <div>
+                    <label for="wednesdayValue">Wednesday</label>
+                    <input type="checkbox" name="wednesday" id="wednesdayValue">    
+                </div>
+                <div>
+                    <label for="thursdayValue">Thursday</label>
+                    <input type="checkbox" name="thursday" id="thursdayValue">    
+                </div>
+                <div>
+                    <label for="fridayValue">Friday</label>
+                    <input type="checkbox" name="friday" id="fridayValue">    
+                </div>
+                <div>
+                    <label for="saturdayValue">Saturday</label>
+                    <input type="checkbox" name="saturday" id="saturdayValue">    
+                </div>
+                <div>
+                    <label for="sundayValue">Sunday</label>
+                    <input type="checkbox" name="sunday" id="sundayValue">    
+                </div>
+            </div>
 
             <label for="friendsGoing">Invite Friends: </label>
             <article id="friendsGoing">
@@ -100,8 +134,6 @@
             
             <button id="event-edit-button">Save Event</button>
             <button id="event-edit-back-button" onclick="loadEventListPage()">Cancel</button>
-
-            <!-- <p>*Not Functional Yet</p> -->
         </section>
     </section>
 
