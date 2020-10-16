@@ -95,6 +95,17 @@ function saveEvent() {
         eventType = "repeating";
     }
 
+    // VALIDATION
+    if (nameValue == null || nameValue == "") {
+        return alert("Please Enter an Event Name...")
+    }
+    if (timeValue == null || timeValue == "") {
+        return alert("Please Enter an Event Time...")
+    }
+    if (dateValue == null || dateValue == "") {
+        return alert("Please Enter an Event Date...")
+    }
+
     // Creating an object that holds the event data
     var data = {
         "name" : nameValue, 
@@ -605,6 +616,17 @@ function saveFriend() {
     var nameValue = document.getElementById("friendNameValue").value;
     var addressValue = document.getElementById("friendAddressValue").value;
     var emailValue = document.getElementById("friendEmailValue").value;
+
+    // VALIDATION
+    if (nameValue == null || nameValue == "") {
+        return alert("Please Enter a Name...")
+    }
+    if (addressValue == null || addressValue == "") {
+        addressValue = "N/A";
+    }
+    if (emailValue == null || emailValue == "") {
+        emailValue = "N/A";
+    }
 
     // Creating an object that holds the event data
     var data = {"name" : nameValue, "address" : addressValue, "email": emailValue, "going": false};
