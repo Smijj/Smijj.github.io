@@ -102,9 +102,12 @@ function saveEvent() {
     if (timeValue == null || timeValue == "") {
         return alert("Please Enter an Event Time...")
     }
-    if (dateValue == null || dateValue == "") {
-        return alert("Please Enter an Event Date...")
+    if (repeatingValue == false) {
+        if (dateValue == null || dateValue == "") {
+            return alert("Please Enter an Event Date...")
+        }
     }
+   
 
     // Creating an object that holds the event data
     var data = {
