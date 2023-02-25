@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Red Diamond Planner</title>
+    <link rel="shortcut icon" href="imgs/Logo192-White.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="imgs/Logo192-White.png">
+</head>
+<!-- onload function here just preloads the event list when the page is loaded -->
+<body onload="onLoad('upcoming')"> 
+    
+    <!-- MAIN -->
+    
+    <section class="main">
+        <article class="main-headerbar">
+            <h1 id="edit-event-header">Add Event</h1>
+            <button id="add-event" onclick="addEventPage()">Add Event</button>
+            <input type="search" name="searchEvents" id="event-search" placeholder="Search for Event...">
+            <img id="open-menu-icon" onclick="toggleSidebar()" src="imgs/MenuIcon50.png" alt="Cannot Find image" sizes="50x50">
+        </article>
+
+        <div class="Hdivider"></div>
+    </section>
+
+
+    <!-- SIDEBAR -->
+
+    <aside id="sidebar">
+        <section id="menu-button-bar">
+            <img id="close-menu-icon" onclick="toggleSidebar()" src="imgs/MenuIcon50.png" alt="Image Missing">
+            <img class="logo" src="imgs/Logo192-White.png" alt="Cannot Find Image" sizes="192x192">
+        </section>
+
+        <div class="Hdivider"></div>
+    </aside>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
+
+
