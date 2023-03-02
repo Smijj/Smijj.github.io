@@ -1,0 +1,16 @@
+:root {
+    --c-bg-dark: rgb(20, 20, 20);
+    --c-text-dark: rgb(255,255,255);
+    --c-bg-light: rgb(248, 255, 225);
+    --c-text-light: rgb(20, 20, 20);
+}
+
+body {
+    background-color: var(--c-bg-dark);
+    color: var(--c-text-dark);
+    height: 100vh;
+    margin: 0px;
+    overflow: scroll;
+    padding: 0px;
+}
+

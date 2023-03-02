@@ -1,6 +1,11 @@
+:root {
+    --c-card: rgb(23, 23, 23);
+    --c-card-border: rgb(43, 43, 43);
+}
+
 #bookmarks {
     align-items: center;
-    background-color: var(--bg-colour);
+    background-color: var(--c-bg-dark);
     display: flex;
     justify-content: center;
     padding: 20px 25% 20px 25%;
@@ -19,7 +24,7 @@ opacity: 1;
 }
 
 .card {
-    background-color: rgba(255,255,255,0.1);
+    background-color: var(--c-card-border);
     border-radius: 10px;
     height: 260px;
     position: relative;
@@ -62,7 +67,7 @@ opacity: 1;
 }
 
 .card > .card-content {
-    background-color: var(--card-colour);
+    background-color: var(--c-card);
     border-radius: inherit;
     position: absolute;
     inset: 1px;
