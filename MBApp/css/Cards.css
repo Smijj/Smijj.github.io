@@ -1,0 +1,70 @@
+#bookmarks {
+    align-items: center;
+    background-color: var(--bg-colour);
+    display: flex;
+    justify-content: center;
+    padding: 20px 25% 20px 25%;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 916;
+    width: calc(100% - 20px);
+}
+
+#cards:hover > .card::after {
+opacity: 1;
+}
+
+.card {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    height: 260px;
+    position: relative;
+    width: 300px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255,255,255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.card::after {
+    background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255,255,255, 0.3),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.card > .card-content {
+    background-color: var(--card-colour);
+    border-radius: inherit;
+    position: absolute;
+    inset: 1px;
+    z-index: 2;
+}
