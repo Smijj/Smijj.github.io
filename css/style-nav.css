@@ -91,10 +91,8 @@ nav {
     transform: translateY(70%) scale(0.9);
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 
-    /* height: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; */
+    /* flex-direction: row;
+    flex-wrap: wrap; */
 }
 
 body[data-nav="true"] > nav > #nav-links {
