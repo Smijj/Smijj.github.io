@@ -1,0 +1,11 @@
+#landing-area {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background-image: url("../imgs/langing-page/landing-bg-8.jpg");
+    background-size: cover;
+    background-position: center, 0%;
+    position: relative;
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    z-index: 2;
+}
