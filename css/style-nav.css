@@ -55,3 +55,21 @@ body[data-nav="true"] > #nav-toggle > .close {
     transform: translate(-50%, -50%) scale(1);
 }
 
+.fa-light {
+    height: 3rem;
+    width: 3rem;
+}
+
+.fa-bars-staggered {
+    background-image: url("/imgs/MenuIcon50.png");
+    background-size: cover;
+    background-position: center, center;
+    /* position: relative; */
+}
+
+.fa-xmark-large {
+    background-image: url("/imgs/Home-Logo-192.png");
+    background-size: cover;
+    background-position: center, center;
+    /* position: relative; */
+}

@@ -1,4 +1,4 @@
-function toggleNav() {
+function ToggleNav() {
     document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
 
 }

@@ -11,22 +11,22 @@
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" href="imgs/Home-Logo-512.png">
         
-    <link rel="stylesheet" href="css/style-core.css">
-    <link rel="stylesheet" href="css/style-nav.css">
-</head>
-
-
-<body data-nav="false">   
-    <main></main> 
+        <link rel="stylesheet" href="css/style-core.css">
+        <link rel="stylesheet" href="css/style-nav.css">
+    </head>
     
-    <nav>
-        <div id="nav-links">
-            <a href="/MBApp" class="nav-link">
-                <h2 class="nav-link-label">Media Bookmarks</h2>
-                <img src="#" alt="#" class="nav-link-image">
-            </a>
-            <a href="" class="nav-link">
-                <h2 class="nav-link-label">0.0</h2>
+    
+    <body data-nav="true">   
+        <main></main> 
+        
+        <nav>
+            <div id="nav-links">
+                <a href="/MBApp" class="nav-link">
+                    <h2 class="nav-link-label">Media Bookmarks</h2>
+                    <img src="#" alt="#" class="nav-link-image">
+                </a>
+                <a href="" class="nav-link">
+                    <h2 class="nav-link-label">0.0</h2>
                 <img src="#" alt="#" class="nav-link-image">
             </a>
             <a href="" class="nav-link">
@@ -39,14 +39,13 @@
             </a>
         </div>
     </nav>
-
-    <script type="text/javascript" src="/scripts/nav-ctrl.js"></script>
-    <button id="nav-toggle" type="button" onclick="toggleNav()">
+    
+    <button id="nav-toggle" type="button" onclick="ToggleNav()">
         <i class="open fa-light fa-bars-staggered"></i>
         <i class="close fa-light fa-xmark-large"></i>
     </button>
     
-
+    
     <!-- <section class="main">
         <article class="main-header-bar">
             <h1>Deku - Home</h1>
@@ -59,6 +58,7 @@
     </section> -->
 </body>
 
+<script type="text/javascript" src="/scripts/nav-ctrl.js"></script>
 
 </html>
 
