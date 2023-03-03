@@ -3,6 +3,7 @@
     --c-text-dark: rgb(255,255,255);
     --c-bg-light: rgb(248, 255, 225);
     --c-text-light: rgb(20, 20, 20);
+    --c-hyperlinks: rgb(201, 71, 71);
 }
 
 body{
@@ -19,9 +20,9 @@ body{
     margin: 0;
     padding: 0;
     font-size: 3.5rem;
-    position: absolute;
-    left: 2rem;
-    top: 1rem;
+    /* position: absolute; */
+    padding-left: 2rem;
+    padding-top: 1rem;
     text-shadow: 0 0 3rem rgb(0, 0, 0);
     cursor: default;
     user-select: none;
@@ -29,6 +30,11 @@ body{
 
 .font-monospace {
     font-family: monospace;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-hyperlinks);
 }
 
 
