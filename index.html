@@ -1,20 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <title>Deku - Home</title>
-    <link rel="shortcut icon" href="imgs/Home-Logo-512.png" type="image/png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="imgs/Home-Logo-512.png">
     
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#000000">
+        <title>Deku - Home</title>
+        <link rel="shortcut icon" href="imgs/Home-Logo-512.png" type="image/png">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="imgs/Home-Logo-512.png">
+        
     <link rel="stylesheet" href="css/style-core.css">
+    <link rel="stylesheet" href="css/style-nav.css">
 </head>
 
-<body>    
-    <section class="main">
+
+<body data-nav="false">   
+    <main></main> 
+    
+    <nav>
+        <div id="nav-links">
+            <a href="/MBApp" class="nav-link">
+                <h2 class="nav-link-label">Media Bookmarks</h2>
+                <img src="#" alt="#" class="nav-link-image">
+            </a>
+            <a href="" class="nav-link">
+                <h2 class="nav-link-label">0.0</h2>
+                <img src="#" alt="#" class="nav-link-image">
+            </a>
+            <a href="" class="nav-link">
+                <h2 class="nav-link-label">3.3</h2>
+                <img src="#" alt="#" class="nav-link-image">
+            </a>
+            <a href="" class="nav-link">
+                <h2 class="nav-link-label">9.9</h2>
+                <img src="#" alt="#" class="nav-link-image">
+            </a>
+        </div>
+    </nav>
+
+    <script type="text/javascript" src="/scripts/nav-ctrl.js"></script>
+    <button id="nav-toggle" type="button" onclick="toggleNav()">
+        <i class="open fa-light fa-bars-staggered"></i>
+        <i class="close fa-light fa-xmark-large"></i>
+    </button>
+    
+
+    <!-- <section class="main">
         <article class="main-header-bar">
             <h1>Deku - Home</h1>
         </article>
@@ -23,8 +56,9 @@
                 <a href="/MBApp">Open Media Bookmarks</a>
             </li>
         </article>
-    </section>
+    </section> -->
 </body>
+
 
 </html>
 
