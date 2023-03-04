@@ -1,31 +1,30 @@
-const letters = "abcdefghijklmnopqrstuvwxyz";
+const letters = "abcdefghijklmnopqrstuvwxyz1234567890#%$@";
 
 document.querySelector(".letter-shuffle-effect").onmouseover = event => {
     let iterations = 0;
     
+    // looping the function to achieve a staggered effect
     const interval = setInterval(() => {
-        console.log(event.target.innerText);
-
+        // inner text gets set here.
+        // splits the inner text into seperate characters.
         event.target.innerText = event.target.innerText.split("")
-        .map((letters, index) => {
-            if (index < iterations) {
-                // console.log(index);
-                // console.log(event.target.dataset.value.innerText.split());
-                return event.target.dataset.value.innerText(index);
+        // alters each character to be a different character
+        .map((letter, index) => {
+            // if the loop has already passed this character during this event call, set it back to its default value (or if its a space).
+            if (index < iterations || event.target.dataset.value.charAt(index) == " ") {
+                return event.target.dataset.value.charAt(index);
             }
-
-            return letters[Math.floor(Math.random() * 26)]
+            // if the loop hasn't passed this character, set it to a random character
+            return letters[Math.floor(Math.random() * 40)]
         })
-        .join("");
-
-        // console.log(event.target.dataset.value.length);
+        .join("");        
         
-        
+        // when the number of iterations >= the length of the original string, stop the loop
         if (iterations >= event.target.dataset.value.length) {
             clearInterval(interval);
         };
         
-        // console.log(iterations);
+        // dividing it by 3 means that it'll change the string 3 times before reaching the "second" iteration where the first character no longer changes 
         iterations += 1/3;
-    }, 30);
+    }, 40); // loop gets called every 40ms
 };
