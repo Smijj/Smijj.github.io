@@ -19,7 +19,11 @@
     
     <body data-nav="false">   
         <section id="landing-area">
-            <h1 class="title font-monospace">Declan Smyth</h1>
+            <div class="title">
+                <!-- <i class="title-icon"></i> -->
+                <a href="index.html" class="title icon"></a>
+                <h1 class="title-label font-monospace">Declan Smyth</h1>
+            </div>
         </section>
         
         <nav>
@@ -43,7 +47,7 @@
         </div>
     </nav>
     
-    <button id="nav-toggle" onclick="ToggleNav()">
+    <button id="nav-toggle" type="button" onclick="ToggleNav()">
         <i class="open fa-light fa-bars-staggered"></i>
         <i class="close fa-light fa-xmark-large"></i>
     </button>

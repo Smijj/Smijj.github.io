@@ -16,15 +16,32 @@ body{
 }
 
 .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.title-icon {
+    background-image: url("/imgs/Home-Logo-512.png");
+    background-size: cover;
+    background-position: center, center;
+    height: 3.5rem;
+    /* width: 100%; */
+    aspect-ratio: 1/1;
+}
+
+.title-label {
     margin: 0;
     padding: 0;
     font-size: 3.5rem;
-    /* position: absolute; */
-    padding-left: 2rem;
-    padding-top: 1rem;
-    text-shadow: 0 0 3rem rgb(0, 0, 0);
     cursor: default;
     user-select: none;
+    /* text-shadow: 0 0 3rem rgb(0, 0, 0); */
 }
 
 .font-monospace {
