@@ -13,3 +13,11 @@ body {
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
     z-index: 2;
 }
+
+#artist-tag {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: burlywood;
+    font-size: 1rem;
+}
