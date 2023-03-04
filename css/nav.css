@@ -12,13 +12,13 @@ body[data-nav="true"] > #landing-area {
 }
 
 .fa-bars-staggered {
-    background-image: url("/imgs/MenuIcon50.png");
+    background-image: url("../imgs/MenuIcon50.png");
     background-size: cover;
     background-position: center, center;
 }
 
 .fa-xmark-large {
-    background-image: url("/imgs/Home-Logo-192.png");
+    background-image: url("../imgs/Home-Logo-192.png");
     background-size: cover;
     background-position: center, center;
 }

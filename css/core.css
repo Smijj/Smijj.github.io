@@ -27,7 +27,7 @@ body{
 }
 
 .title-icon {
-    background-image: url("/imgs/Home-Logo-512.png");
+    background-image: url("../imgs/Home-Logo-512.png");
     background-size: cover;
     background-position: center, center;
     height: 3.5rem;
@@ -40,12 +40,20 @@ body{
     padding: 0;
     font-size: 3.5rem;
     cursor: default;
-    user-select: none;
+    /* user-select: none; */
     /* text-shadow: 0 0 3rem rgb(0, 0, 0); */
 }
 
+/* .letter-shuffle-effect {
+
+} */
+
 .font-monospace {
     font-family: monospace;
+}
+
+.font-sans-serif {
+    font-family: sans-serif;
 }
 
 a {
